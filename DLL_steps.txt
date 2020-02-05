@@ -1,0 +1,14 @@
+Step 1. 
+TestCal.java
+
+Step 2:-javac TestCal.java
+Step 3:-javah -jni TestCal
+This command generates a header file TestCal.h. Create TestCal.c and copy the contents of the header file to it. Delete the extra content and add the required code. Add header files of stdio and math
+
+4. compile c- file
+
+Note: use " locate jni.h " and "locate jni_md.h" to find path
+
+Eg :- gcc -I/usr/lib/jvm/java-8-oracle/include -I/usr/lib/jvm/java-8-oracle/include/linux -o libTestCal.so -shared -fPIC TestCal.c
+
+5. java -Djava.library.path=`pwd` TestCal
